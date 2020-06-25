@@ -1,4 +1,6 @@
-# post-tracking
+<h1 align="center">Post Tracking</h1>
+<p align="center">![PHP Composer](https://github.com/stantabcorp/post-tracking/workflows/PHP%20Composer/badge.svg)</p>
+
 This project aims to create an open-source, free to use API, which includes *every* post/logistics company tracking.  
 Feel free to add a service following [La Poste example](https://github.com/stantabcorp/post-tracking/blob/master/Services/LaPoste.php) and make a pull request.
 
