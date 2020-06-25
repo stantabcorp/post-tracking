@@ -1,6 +1,6 @@
 # post-tracking
 This project aims to create an open-source, free to use API, which includes *every* post/logistics company tracking.  
-Feel free to add a service following [La Poste example]() and make a pull request.
+Feel free to add a service following [La Poste example](https://github.com/stantabcorp/post-tracking/blob/master/Services/LaPoste.php) and make a pull request.
 
 ## Hosted version
 An hosted version of this api is comming soon.  
@@ -16,4 +16,6 @@ In order to self host this api please meet the following requirements:
 
 Here is a list of inculded services: 
 - [X] La Poste
+- [X] Colissimo
+- [X] Chronopost
 
