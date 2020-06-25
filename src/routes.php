@@ -1,8 +1,8 @@
 <?php
 
-    $app->get('/', [\App\Controllers\DefaultController::class, 'home']);
-    $app->get('/track', [\App\Controllers\DefaultController::class, 'track']);
+    $this->get('/', [\App\Controllers\DefaultController::class, 'home']);
+    $this->get('/track', [\App\Controllers\DefaultController::class, 'track']);
 
-    $app->group('/service/{service}', function(){
+    $this->group('/service/{service}', function(){
         $this->get('/track[/]', [\App\Controllers\ServicesController::class, 'track']);
     });

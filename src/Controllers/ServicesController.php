@@ -16,7 +16,7 @@ class ServicesController extends Controller {
             ])->withStatus(400);
         }
 
-        $serviceHelper = new Service("../Services");
+        $serviceHelper = new Service;
         $service = $serviceHelper->find($service);
         if($service == null){
             return $response->withJson([

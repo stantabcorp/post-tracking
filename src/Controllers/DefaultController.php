@@ -9,7 +9,7 @@ use Slim\Http\Response;
 class DefaultController extends Controller {
     public function home(Request $request, Response $response){
 
-        $service = new Service("../Services");
+        $service = new Service;
 
         return $response
             ->withJson([
@@ -26,7 +26,7 @@ class DefaultController extends Controller {
             ])->withStatus(400);
         }
         
-        $serviceHelper = new Service("../Services");
+        $serviceHelper = new Service;
         $result = $serviceHelper->track($request->getQueryParams()['code']);
         if($result === false){
             return $response->withJson([

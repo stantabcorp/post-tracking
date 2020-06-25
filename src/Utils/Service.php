@@ -4,17 +4,12 @@
 
     class Service{
 
-        private $path;
-
-        public function __construct($path)
-        {
-            $this->path = $path;
-        }
+        public static $path;
 
         public function find($service){
-            foreach(scandir($this->path) as $path){
+            foreach(scandir(self::$path) as $path){
                 if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
-                include_once "{$this->path}/{$path}";
+                include_once self::$path . "/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
                 if($s->serviceName == $service){
@@ -25,9 +20,9 @@
         }
 
         public function track($code){
-            foreach(scandir($this->path) as $path){
+            foreach(scandir(self::$path) as $path){
                 if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
-                include_once "{$this->path}/{$path}";
+                include_once self::$path . "/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
                 if($s->serviceCode == "{$code[0]}{$code[1]}"){
@@ -36,9 +31,9 @@
                     }
                 }
             }
-            foreach(scandir($this->path) as $path){
+            foreach(scandir(self::$path) as $path){
                 if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
-                include_once "{$this->path}/{$path}";
+                include_once self::$path . "/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
                 return $s->track($code);
@@ -48,9 +43,9 @@
 
         public function listServices(){
             $services = [];
-            foreach(scandir($this->path) as $path){
+            foreach(scandir(self::$path) as $path){
                 if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
-                include_once "{$this->path}/{$path}";
+                include_once self::$path . "/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
                 $services[] = $s->serviceName;

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Utils\Service;
 use Psr\Container\ContainerInterface;
 
 class Controller {

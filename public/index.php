@@ -2,15 +2,10 @@
 
 require '../vendor/autoload.php';
 
-if (file_exists('../.env')) {
-    $dotEnv = new \Dotenv\Dotenv(dirname(__DIR__));
-    $dotEnv->load();
-}
-
-require '../src/bootstrap/functions.php';
+App\DotEnv::load();
 
 $app = new \App\App();
 
-require '../src/routes.php';
+Service::$path = "../Services";
 
 $app->run();
