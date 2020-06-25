@@ -13,7 +13,7 @@
 
         public function find($service){
             foreach(scandir($this->path) as $path){
-                if($path == "." || $path == ".."){ continue; }
+                if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
                 include_once "{$this->path}/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
@@ -26,7 +26,7 @@
 
         public function track($code){
             foreach(scandir($this->path) as $path){
-                if($path == "." || $path == ".."){ continue; }
+                if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
                 include_once "{$this->path}/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
@@ -37,7 +37,7 @@
                 }
             }
             foreach(scandir($this->path) as $path){
-                if($path == "." || $path == ".."){ continue; }
+                if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
                 include_once "{$this->path}/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
@@ -49,7 +49,7 @@
         public function listServices(){
             $services = [];
             foreach(scandir($this->path) as $path){
-                if($path == "." || $path == ".."){ continue; }
+                if($path == "." || $path == ".." || $path == "Services.php"){ continue; }
                 include_once "{$this->path}/{$path}";
                 $class = "\Services\\" . pathinfo($path, PATHINFO_FILENAME);
                 $s = new $class;
