@@ -20,3 +20,6 @@ Here is a list of inculded services:
 - [X] Colissimo
 - [X] Chronopost
 
+## Funding
+You can help us to cover the hosting expenses of the API by [becoming a sponsor on Open Collective](https://opencollective.com/post-tracking-api)
+[![Become a Sponsor](https://opencollective.com/post-tracking-api/tiers/sponsors.svg?avatarHeight=36&width=600)](https://opencollective.com/post-tracking-api)
