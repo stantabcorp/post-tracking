@@ -3,11 +3,12 @@
 ![PHP Composer](https://github.com/stantabcorp/post-tracking/workflows/PHP%20Composer/badge.svg)
 
 This project aims to create an open-source, free to use API, which includes *every* post/logistics company tracking.  
-Feel free to add a service following [La Poste example](https://github.com/stantabcorp/post-tracking/blob/master/Services/LaPoste.php) and make a pull request.
+Feel free to add a service following [The creating a new service guide](https://github.com/stantabcorp/post-tracking/wiki/Creating-a-new-service) and make a pull request.
 
 ## Hosted version
 An hosted version of this api is comming soon.  
 This access will be free, without any registration but limited in request count.
+[You can found out more here](https://github.com/stantabcorp/post-tracking/wiki/API-Usage)
 
 ## Selfhosting
 In order to self host this api please meet the following requirements:
