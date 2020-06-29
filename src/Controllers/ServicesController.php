@@ -16,6 +16,16 @@ class ServicesController extends Controller {
             ])->withStatus(400);
         }
 
+        $cache = $this->container->get("cache");
+        $cache->removeOlderElements();
+
+        if($cache->has("track:" . $request->getQueryParams()['code'])){
+            return $response->withJson([
+                "success" => true,
+                "tracking" => $cache->get("track:" . $request->getQueryParams()['code'])
+            ]);
+        }
+
         $serviceHelper = new Service;
         $service = $serviceHelper->find($service);
         if($service == null){
@@ -32,6 +42,8 @@ class ServicesController extends Controller {
                 "errors" => ["Tracking error"]
             ])->withStatus(500);
         }
+        
+        $cache->set("track:" . $request->getQueryParams()['code'], $result);
 
         return $response->withJson([
             "success" => true,
