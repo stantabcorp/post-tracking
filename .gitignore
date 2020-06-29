@@ -33,3 +33,4 @@ modules.xml
 .idea/misc.xml
 *.ipr
 .env
+cache.json
