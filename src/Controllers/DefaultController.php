@@ -25,7 +25,17 @@ class DefaultController extends Controller {
                 "errors" => ["code parameter is missing"]
             ])->withStatus(400);
         }
-        
+
+        $cache = $this->container->get("cache");
+        $cache->removeOlderElements();
+
+        if($cache->has("track:" . $request->getQueryParams()['code'])){
+            return $response->withJson([
+                "success" => true,
+                "tracking" => $cache->get("track:" . $request->getQueryParams()['code'])
+            ]);
+        }
+
         $serviceHelper = new Service;
         $result = $serviceHelper->track($request->getQueryParams()['code']);
         if($result === false){
@@ -40,6 +50,8 @@ class DefaultController extends Controller {
                 "errors" => ["Service not found"]
             ])->withStatus(404);
         }
+
+        $cache->set("track:" . $request->getQueryParams()['code'], $result);
 
         return $response->withJson([
             "success" => true,

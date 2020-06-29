@@ -4,8 +4,8 @@
 
     use App\App;
     use App\DotEnv;
-use App\Utils\Service;
-use Psr\Http\Message\ResponseInterface;
+    use App\Utils\Service;
+    use Psr\Http\Message\ResponseInterface;
     use Psr\Http\Message\ServerRequestInterface;
     use Slim\Http\Request;
     use Slim\Http\Response;
