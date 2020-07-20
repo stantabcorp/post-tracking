@@ -1,5 +1,7 @@
 <?php
 
+use App\Utils\Service;
+
 require '../vendor/autoload.php';
 
 App\DotEnv::load();
