@@ -21,6 +21,7 @@ Here is a list of inculded services:
 - [X] La Poste
 - [X] Colissimo
 - [X] Chronopost
+- [X] Latvijas Pasts
 
 ## Funding
 You can help us to cover the hosting expenses of the API by [becoming a backer](https://opencollective.com/post-tracking-api#backer) or a [sponsor](https://opencollective.com/post-tracking-api#sponsor).
